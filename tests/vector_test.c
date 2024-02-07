@@ -3,6 +3,11 @@
 
 #include "vector.h"
 
+struct vector_t {
+  size_t size;
+  int *data;
+};
+
 int main(int argc, char **argv) {
   vector_t *v;
 
@@ -20,6 +25,9 @@ int main(int argc, char **argv) {
   printf("%d ", vector_get(v, 1));
   printf("%d\n", vector_get(v, 2));
 
+  /* brute forcing some spaces... */
+  (v->data)[23] = 888;
+  (v->data)[1] = 999;
   printf("Doing a bunch of vector_set()s\n");
   vector_set(v, 0, 98);
   vector_set(v, 11, 15);
