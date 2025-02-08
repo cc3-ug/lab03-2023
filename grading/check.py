@@ -93,17 +93,17 @@ def check_ex1():
         v.reset()
         v.visit(utils.find_func(ast, 'vector_new'))
         if v.count == 0:
-            return (round(grade), utils.failed('[vector_new] don\'t forget to call free... ¯\\_(⊙︿⊙)_/¯'), '')
+            return (round(grade), utils.failed('[vector_new] don\'t forget to call free...'), '')
         else:
-            grade += 8
+            grade += 5
         
         # vector_delete
         v.reset()
         v.visit(utils.find_func(ast, 'vector_delete'))
         if v.count < 2:
-            return (round(grade), utils.failed('[vector_delete] don\'t forget to call free... ¯\\_(⊙︿⊙)_/¯'), '')
+            return (round(grade), utils.failed('[vector_delete] don\'t forget to call free enough times...'), '')
         else:
-            grade += 8
+            grade += 5
         
         # vector_set
         r = ReallocCall()
@@ -112,9 +112,9 @@ def check_ex1():
         v.visit(utils.find_func(ast, 'vector_set'))
         r.visit(utils.find_func(ast, 'vector_set'))
         if v.count == 0 and r.count == 0:
-            return (round(grade), utils.failed('[vector_set] don\'t forget to call free or use realloc... ¯\\_(⊙︿⊙)_/¯'), '')
+            return (round(grade), utils.failed('[vector_set] don\'t forget to call free or use realloc...'), '')
         else:
-            grade += 9
+            grade += 5
         
         # run tests
         task = utils.execute(cmd=['./vector'], timeout=5)
@@ -132,12 +132,12 @@ def check_ex1():
             exp = exp.strip()
             out = out.strip()
             if exp == out:
-                grade += 75 / 17
+                grade += 85 / 20
             else:
                 wrong += 1
-        
+
         # grade
-        if wrong == 17:
+        if wrong == 20:
             return (round(grade), utils.failed('all tests failed'), '')
         elif wrong != 0:
             return (round(grade), utils.incomplete('some tests failed...'), '')

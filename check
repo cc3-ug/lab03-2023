@@ -1,5 +1,3 @@
-cp grading/Makefile .
-cp grading/*.expected .
 make clean
 
 {
