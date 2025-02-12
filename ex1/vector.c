@@ -22,17 +22,19 @@ static void allocation_failed() {
 vector_t *vector_new() {
   vector_t *retval;
 
-  // Allocate memory for the struct
+  /*
+    Allocate memory for the whole structure
+    Check if you got a valid pointer
+    If not, report it with allocation_failed()
+    If yes, initialize the size
+  */
 
-  // Check if we got a valid pointer, if not, report it
-
-  // Initialize size
-
-  // Allocate memory for the struct
-
-  // Check if we got a valid pointer for data, if not, clean and report
-
-  // Initialize the content of data
+  /*
+    Then, allocate memory for the internal data
+    Check if you got a valid pointer
+    If not, report it with allocation_failed()
+    If yes, initialize the content of data
+  */
 
   return retval;
 }
@@ -40,15 +42,19 @@ vector_t *vector_new() {
 /* Free up the memory allocated for the passed vector */
 void vector_delete(vector_t *v) {
   
-  // Remember, you need to free up ALL the memory that is allocated
+  /*
+    Remember to free ALL the memory that you allocated
+  */
 
 }
 
 /* Return the value in the vector */
 int vector_get(vector_t *v, size_t loc) {
-  
-  // Return the content of the location
-  // What do we return if that location doesn't exist yet?
+
+  /*
+    Return the content of the location
+    What do you return if that location doesn't exist yet?
+  */
 
   return -1;
 }
@@ -56,16 +62,11 @@ int vector_get(vector_t *v, size_t loc) {
 /* Set a value in the vector. If the extra memory allocation fails, call allocation_failed(). */
 void vector_set(vector_t *v, size_t loc, int value) {
   
-  // What do we do if the location doesn't exist yet?
-
-  // Change the size of the structure
-
-  // Allocate memory for the bigger data
-
-  // Check if we got a valid pointer for the bigger data, if not, clean and report
-
-  // What do we write in the newly created positions?
-
-  // Finally, put the value in loc
+  /*
+    What do you do if the location doesn't exist yet?
+    Allocate memory for the bigger data
+    Remember to check if you got a valid pointer, 
+    clean the newly created positions, and update the size
+  */
 
 }
